@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+    <!--Dependency injected through the setter method  -->
+    <!--use Property tag of child of the bean tag-->
+
+    <!--Here id used for the uniquely identify this particular beamn-->
+    <bean id="engine" class="com.core.spring_core_setter_injection.Engine">
+        <!--Property tag use for setter injection-->
+        <!--inside engine class no property so dose not add anything -->
+    </bean>
+
+    <bean id="car" class="com.core.spring_core_setter_injection.Car">
+        <!--Property tag use for setter injection-->
+        <!--inside car class only one  property added below -->
+        <property name="engine" ref="engine">
+        </property>
+
+    </bean>
+
+</beans>
