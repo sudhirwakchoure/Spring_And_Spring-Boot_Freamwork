@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+                           http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <!-- Dependency injected through annotations but configured through the XML file -->
+    <!-- Adding the context schema like the XML schema -->
+
+    <!-- inside it, all the classes will be created as beans (objects)
+      here we can add multipal packages with (,) comma separated
+    -->
+
+    <context:component-scan base-package="com.core.spring_core_DI_Xml_with_Annotation"/>
+
+</beans>
