@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+    <beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+        <!-- Dependency injected through the Constructor   -->
+        <!-- use Constructor-arg tag of child of the bean tag -->
+        <!-- Here id used for the uniquely identify this particular bean -->
+
+        <bean id="engine" class="com.core.spring_core_constructor_injection.Engine">
+            <!-- Constructor-arg tag use for Constructor injection -->
+            <!-- inside engine class no property so does not add anything  -->
+        </bean>
+        <bean id="car" class="com.core.spring_core_constructor_injection.Car">
+            <!-- Constructor-arg tag use for Constructor injection -->
+            <!-- inside car class only one  property added below  -->
+            <constructor-arg  ref="engine"> </constructor-arg>
+        </bean>
+    </beans>
+
+
+</beans>
