@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
+// @Component it say the crate a bean of this class
 @Component
 public class Address {
     private String city;
@@ -15,6 +16,11 @@ public class Address {
         return city;
     }
 
+    /*Setting a default value is a way to ensure that a variable or parameter in 
+      a program has a predefined, valid starting point, even if no explicit value 
+      is provided by the user or programmer.
+     This practice helps prevent errors and improve the reliability of the code. */
+    
     @Autowired
     public void setCity(@Value("Shirdi") String city) { // Example default value
         System.out.println("Address setCity method :: address class");
