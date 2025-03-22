@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
+// @Component it say the crate a bean of this class
 @Component
 public class Student {
     private String name;
@@ -12,7 +13,12 @@ public class Student {
     public String getName() {
         System.out.println("Student getName method :: student class");
         return name;
-    }
+    } 
+
+    /*Setting a default value is a way to ensure that a variable or parameter in 
+      a program has a predefined, valid starting point, even if no explicit value 
+      is provided by the user or programmer.
+     This practice helps prevent errors and improve the reliability of the code. */
 
     @Autowired
     public void setName(@Value("John Doe") String name) { // Example default value
