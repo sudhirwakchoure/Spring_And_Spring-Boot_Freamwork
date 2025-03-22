@@ -9,7 +9,7 @@ import org.springframework.context.annotation.Configuration;
  */
 
 /* suppose you have  multiple packages in you  class then you just give the base package like 
-   here base package is    "com.core"  insted of wrting this 
+   here base package is    "com.core"   instead of writing this
    @ComponentScan(basePackages = "com.core.Constructor_DI_with_java")
     you can write like 
     @ComponentScan(basePackages = "com.core")
