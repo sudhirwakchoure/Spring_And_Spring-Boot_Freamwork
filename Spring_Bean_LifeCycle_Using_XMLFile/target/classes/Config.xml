@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+        <bean id="engine" class="com.core.spring_bean_lifecycle_using_Xml.Engine">
+        </bean>
+
+       <bean id="car" class="com.core.spring_bean_lifecycle_using_Xml.Car" init-method="afterPropertiesSet" destroy-method="destroy">
+           <property name="engine" ref="engine">
+           </property>
+       </bean>
+
+
+</beans>
