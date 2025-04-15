@@ -105,6 +105,5 @@ class SpringJpaApplicationTests {
                 "\t" +laptop.getUser().getId()+
                 " found successfully ");
 
-
     }
 }
