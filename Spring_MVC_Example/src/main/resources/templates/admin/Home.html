@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>AdminHome</title>
+</head>
+<body>
+<div class="container">
+<h1>
+    <span th:text="${title}"></span>
+</h1>
+    <button type="submit">Click Me</button>
+
+    <h1> List of user </h1>
+
+    <!--/*@thymesVar id="users" type=""*/-->
+    <ul th:each="user : ${users}">
+        <li th:text="${user}"></li>
+    </ul>
+    <a href="/page/home">Home Page</a>
+     <br>
+    <h1><span th:text="${date}"></span></h1>
+</div>
+</body>
+</html>
