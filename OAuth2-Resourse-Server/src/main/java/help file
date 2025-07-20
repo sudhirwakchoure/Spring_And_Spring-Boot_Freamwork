@@ -83,4 +83,9 @@ in general you got  the endpoint
 "urn:ietf:params:oauth:grant-type:token-exchange",
 
 =-----------------------------------------------------
+
+after the you need to add this setup inside the postman
+authorization section  with oauth2
+client id  client secret the all this you get form the keycloak server  
+
 this endpoint create  the  token for you to authorized this project
