@@ -1,0 +1,86 @@
+
+Keycloak Authentication Server Setup Guide
+
+Step 1: Install Docker
+- Make sure Docker is installed
+- Verify installation with: docker --version
+
+Step 2: Run Keycloak Server
+- Command:
+  docker run -d ^
+    -p 8080:8080 ^
+    -e KEYCLOAK_ADMIN=admin ^
+    -e KEYCLOAK_ADMIN_PASSWORD=admin ^
+    keycloak/keycloak:26.3.1 ^
+    start-dev
+
+Step 3: Access Admin Console
+- URL: http://localhost:8080
+- Login: admin / admin
+
+Step 4: Create Realm
+- In Admin Console, click Realm dropdown → Create Realm
+- Name the realm (e.g., your organization)
+- Click Create
+
+Step 5: Configure Realm Settings
+- Go to Realm Settings → Login tab
+- Enable:
+  - User Registration
+  - Email as Username (optional)
+  - Verify Email (optional)
+
+Step 6: (Optional) Create Authentication Flow
+- Go to Authentication tab
+- Create or modify login/registration flows
+
+Step 7: Create Client
+- Go to Clients → Create Client
+- Fill details:
+  - Client ID (e.g., my-app)
+  - Protocol: openid-connect
+  - Root URL: your app’s URL
+- After creation:
+  - Set Access Type (Public or Confidential)
+  - Configure Redirect URIs and Credentials
+
+Step 8: Test Registration
+- Visit: http://localhost:8080/realms/<your-realm>/account
+- Click Register → Fill details → Confirm email if verification is enabled
+
+End of Setup Guide
+
+
+
+in this project you need docker
+after docker install and the  keycloak/keycloak:26.3.1 keycloak server
+image run that server image
+then the create one  realm for the your organization
+after the  use you created realm the go to realm setting then fill all general and login info
+in general you got  the endpoint
+
+
+-------------------------------------------------------------------
+
+{
+"issuer": "http://127.0.0.1:8086/realms/SudhirFoodApp",
+"authorization_endpoint": "http://127.0.0.1:8086/realms/SudhirFoodApp/protocol/openid-connect/auth",
+"token_endpoint": "http://127.0.0.1:8086/realms/SudhirFoodApp/protocol/openid-connect/token",
+"introspection_endpoint": "http://127.0.0.1:8086/realms/SudhirFoodApp/protocol/openid-connect/token/introspect",
+"userinfo_endpoint": "http://127.0.0.1:8086/realms/SudhirFoodApp/protocol/openid-connect/userinfo",
+"end_session_endpoint": "http://127.0.0.1:8086/realms/SudhirFoodApp/protocol/openid-connect/logout",
+"frontchannel_logout_session_supported": true,
+"frontchannel_logout_supported": true,
+"jwks_uri": "http://127.0.0.1:8086/realms/SudhirFoodApp/protocol/openid-connect/certs",
+"check_session_iframe": "http://127.0.0.1:8086/realms/SudhirFoodApp/protocol/openid-connect/login-status-iframe.html",
+"grant_types_supported": [
+"authorization_code",
+"client_credentials",
+"implicit",
+"password",
+"refresh_token",
+"urn:ietf:params:oauth:grant-type:device_code",
+"urn:ietf:params:oauth:grant-type:token-exchange",
+
+=-----------------------------------------------------
+this endpoint create  the  token for you to authorized this project
